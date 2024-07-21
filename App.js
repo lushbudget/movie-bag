@@ -7,7 +7,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Home></Home>
-      <CustomButton title="BUTTON">BUTTON</CustomButton>
+      <CustomButton title="PICK">BUTTON</CustomButton>
       <StatusBar style="auto" />
     </View>
   );

@@ -4,7 +4,7 @@ import CustomButton from './CustomButton';
 const Home = () => {
   return (
     <>
-    <Text> THIS IS MOVIE BAG</Text>
+    <Text> THIS IS Movie BAG</Text>
     <Button title="pick a card, any card" onPress={console.log('butt')} />
     </>
   )

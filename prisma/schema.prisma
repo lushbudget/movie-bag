@@ -14,11 +14,15 @@ datasource db {
 }
 
 model Movie {
-  id          Int    @id @default(autoincrement())
-  title       String @unique
+  id          Int      @id @default(autoincrement())
+  title       String
   releaseYear Int
-  genre       String
+  genre       String[] // Array of strings
   director    String
+  writer      String
+  actors      String[] // Array of strings
   plot        String
   rating      String
+  musicBy     String
+  runTimeMins Int
 }
