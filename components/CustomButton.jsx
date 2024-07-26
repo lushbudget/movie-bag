@@ -1,24 +1,22 @@
 import React from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
+import AwesomeButton from "react-native-really-awesome-button";
 
-const CustomButton = ({ onPress, title }) => (
-  <TouchableOpacity style={styles.button} onPress={onPress}>
-    <Text style={styles.buttonText}>{title}</Text>
 
-  </TouchableOpacity>
-);
+const CustomButton = ({ onPress }) => {
+  return <AwesomeButton extra={
+    <LinearGradient
+      colors={["brown", "orange", "orange", "pink"]}
+      style={{ ...StyleSheet.absoluteFillObject }} />
+    }
+    onPress={onPress}
+    
+    >
+    pick a movie
+  </AwesomeButton>;
+}
 
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: '#ffff',
-    padding: 10,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: 'rgba(159, 226, 191, 1',
-    fontSize: 30,
-  },
-});
+
 
 export default CustomButton;
