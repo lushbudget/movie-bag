@@ -4,20 +4,19 @@ import { LinearGradient } from 'expo-linear-gradient';
 import AwesomeButton from "react-native-really-awesome-button";
 
 
-const CustomButton = ({ onPress }) => {
-  
+const BackToStartButton = ({ onPress }) => {
   return <AwesomeButton extra={
     <LinearGradient
-      colors={["black", "green", "black", "red"]}
+      colors={["brown", "orange", "orange", "pink"]}
       style={{ ...StyleSheet.absoluteFillObject }} />
     }
     onPress={onPress}
     
     >
-    pick a movie
+    back to the bag!
   </AwesomeButton>;
 }
 
 
 
-export default CustomButton;
+export default BackToStartButton;

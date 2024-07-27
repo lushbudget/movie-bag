@@ -3,39 +3,21 @@ import { Text } from 'react-native';
 import { StyleSheet, View } from 'react-native';
 
 
-const MovieCard = () => {
-  const [allMovies, setAllMovies] = useState({})
-  const [movieToDisplay, setMovieToDisplay] = useState({});
-  const getMovies = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/api/movie");
-      const result = await response.json();
-      setAllMovies(result);
-    } catch (error) {
-      console.error("Error fetching movies:", error);
-    }
-  }
-  useEffect(() => {
-    getMovies();
-  }, [])
-
-  const randomNum = Math.floor(Math.random() * allMovies.length);
-  for (let i = 0; i < allMovies.length; i++) {
-    let curMov = allMovies[i];
-    if (curMov.id === randomNum) {
-      setMovieToDisplay(curMov);
-    }
-  }
-  console.log(movieToDisplay)
-
-
+const MovieCard = ({movieToDisplay}) => {
   return (
+    
     <View style={StyleSheet.card}>
       <View style={StyleSheet.cardContent}>
         <Text>{movieToDisplay.title}</Text>
+        <Text>Director: {movieToDisplay.director}</Text>
         <Text>Release Year: {movieToDisplay.releaseYear}</Text>
         <Text>Rating: {movieToDisplay.rating}</Text>
         <Text>{movieToDisplay.plot}</Text>
+        <Text>It's going to take {movieToDisplay.runTimeMins} minutes out of your day</Text>
+        <Text>Actors: </Text>
+        {movieToDisplay.actors.map((actor, index) => (
+          <Text key={index}>{actor}</Text>
+        ))}
       </View>
     </View>
 
@@ -44,10 +26,11 @@ const MovieCard = () => {
 
 const styles = StyleSheet.create({
   card: {
+    justifyContent: "center"
 
   },
   cardContent: {
-    textShadowColor: "blue"
+     justifyContent: "center"
 
   }
 })

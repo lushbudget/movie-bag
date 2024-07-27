@@ -1,4 +1,3 @@
-
 const { prisma } = require("./index.js");
 
 const clearTables = async () => {
