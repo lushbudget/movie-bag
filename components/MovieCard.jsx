@@ -6,17 +6,17 @@ import { StyleSheet, View } from 'react-native';
 const MovieCard = ({movieToDisplay}) => {
   return (
     
-    <View style={StyleSheet.card}>
-      <View style={StyleSheet.cardContent}>
-        <Text>{movieToDisplay.title}</Text>
-        <Text>Director: {movieToDisplay.director}</Text>
-        <Text>Release Year: {movieToDisplay.releaseYear}</Text>
-        <Text>Rating: {movieToDisplay.rating}</Text>
-        <Text>{movieToDisplay.plot}</Text>
-        <Text>It's going to take {movieToDisplay.runTimeMins} minutes out of your day</Text>
-        <Text>Actors: </Text>
+    <View style={styles.card}>
+      <View style={styles.cardContent}>
+        <Text style={styles.innerText}>{movieToDisplay.title}</Text>
+        <Text style={styles.innerText}>Director: {movieToDisplay.director}</Text>
+        <Text style={styles.innerText}>Release Year: {movieToDisplay.releaseYear}</Text>
+        <Text style={styles.innerText}>Rating: {movieToDisplay.rating}</Text>
+        <Text style={styles.innerText}>{movieToDisplay.plot}</Text>
+        <Text style={styles.innerText}>It's going to take {movieToDisplay.runTimeMins} minutes out of your day</Text>
+        <Text style={styles.innerText}>The Stars: </Text>
         {movieToDisplay.actors.map((actor, index) => (
-          <Text key={index}>{actor}</Text>
+          <Text style={styles.innerText} key={index}>{actor}</Text>
         ))}
       </View>
     </View>
@@ -26,12 +26,17 @@ const MovieCard = ({movieToDisplay}) => {
 
 const styles = StyleSheet.create({
   card: {
-    justifyContent: "center"
+    justifyContent: "center",
+    color: 'white'
 
   },
   cardContent: {
-     justifyContent: "center"
+     justifyContent: "center",
+     color: 'white'
 
+  },
+  innerText: {
+    color: 'white'
   }
 })
 export default MovieCard

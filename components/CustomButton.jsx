@@ -8,7 +8,7 @@ const CustomButton = ({ onPress }) => {
   
   return <AwesomeButton extra={
     <LinearGradient
-      colors={["black", "green", "black", "red"]}
+      colors={["black", "pink", "orange", "red"]}
       style={{ ...StyleSheet.absoluteFillObject }} />
     }
     onPress={onPress}

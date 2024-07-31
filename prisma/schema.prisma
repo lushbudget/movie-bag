@@ -19,7 +19,7 @@ model Movie {
   releaseYear Int
   genre       String[] // Array of strings
   director    String
-  writer      String
+  writer      String[]
   actors      String[] // Array of strings
   plot        String
   rating      String

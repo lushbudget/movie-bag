@@ -7,8 +7,8 @@ import AwesomeButton from "react-native-really-awesome-button";
 const BackToStartButton = ({ onPress }) => {
   return <AwesomeButton extra={
     <LinearGradient
-      colors={["brown", "orange", "orange", "pink"]}
-      style={{ ...StyleSheet.absoluteFillObject }} />
+      colors={["white", "orange", "orange", "pink"]}
+      style={{ ...StyleSheet.absoluteFillObject, margin: 4 }} />
     }
     onPress={onPress}
     
